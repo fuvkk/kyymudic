@@ -457,7 +457,7 @@ Saya perlu menjadi admin dengan beberapa izin:
         what = "Query Given"
         await LOG_CHAT(message, what)
         query = message.text.split(None, 1)[1]
-        mystic = await message.reply_text("**🔎 Pencarian**")
+        mystic = await message.reply_text("**🔎 ꜱᴇᴀʀᴄʜɪɴɢ..**")
         try:
             a = VideosSearch(query, limit=1)
             result = (a.result()).get("result")
@@ -471,7 +471,7 @@ Saya perlu menjadi admin dengan beberapa izin:
         thumb ="cache/IMG_20211105_143948_192.jpg"
         buttons = search_markup(ID1, duration1, user_id, query)
         await mystic.edit( 
-            f"**✨ Silahkan pilih lagu yang ingin anda putar**\n\n¹ <b>{title1[:27]}</b>\n  ┗ 💡 <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID1})__</u>\n  ┗ ⚡ __Powered by {BOT_NAME}__",    
+            f"**💡 Confirmation here**\n\n<b>Do you really want to play {title1[:27]} ?</b>\n╘══ <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID1})__</u>\n\n**Powered by :** <u>__[The Creator Pavan](https://t.me/TheCreatorPavan)__</u>",    
             reply_markup=InlineKeyboardMarkup(buttons),
             disable_web_page_preview=True
         )  
@@ -506,13 +506,13 @@ Saya perlu menjadi admin dengan beberapa izin:
         await message.reply_photo(
             photo=thumb,
             caption=f"""
-<b>💡 Trek ditambahkan ke antrian</b>
+<b>💡 Track Added in Queue</b>
 
-<b>🏷️ Nama: [{title[:25]}]({link})</b>
-<b>⏱️ Durasi:</b> {duration} \n
-<b>🎧 Atas permintaan: </b>{checking}
+<b>🏷️ Name : [{title[:25]}]({link})</b>
+<b>╚═ Time :</b> {duration} \n
+<b>╚═ User : </b>{checking}
 
-<b>#️⃣ Posisi antrian</b> {position}
+<b>#️⃣ Positioned at</b> {position}
 """,
             reply_markup=InlineKeyboardMarkup(buttons),
         )
@@ -547,9 +547,9 @@ Saya perlu menjadi admin dengan beberapa izin:
             photo=thumb,
             reply_markup=InlineKeyboardMarkup(buttons),
             caption=f"""
-<b>🏷 Nama:</b> [{title[:25]}]({link})
-<b>⏱️ Durasi:</b> {duration}
-<b>🎧 Atas permintaan:</b> {checking}
+<b>🏷️ Name : [{title[:25]}]({link})</b>
+<b>╚═ Time :</b> {duration} \n
+<b>╚═ User : </b>{checking}
 """,
         )
         return await mystic.delete()
@@ -697,14 +697,13 @@ async def startyuplay(_, CallbackQuery):
         m = await CallbackQuery.message.reply_photo(
             photo=thumb,
             caption=f"""
-<b>💡 Trek ditambahkan ke antrian</b>
+<b>💡 Track Added in Queue</b>
 
-<b>🏷 Nama:</b>[{title[:25]}]({url})
-<b>⏱️ Durasi:</b> {duration}
-<b>💡</b> [More Information](https://t.me/{BOT_USERNAME}?start=info_{id})
-<b>🎧 Atas permintaan:</b> {checking}
+<b>🏷️ Name : [{title[:25]}]({link})</b>
+<b>╚═ Time :</b> {duration} \n
+<b>╚═ User : </b>{checking}
 
-<b>#️⃣ Posisi antrian</b> {position}
+<b>#️⃣ Positioned at</b> {position}
 """,
             reply_markup=InlineKeyboardMarkup(buttons),
         )
@@ -728,10 +727,9 @@ async def startyuplay(_, CallbackQuery):
             photo=thumb,
             reply_markup=InlineKeyboardMarkup(buttons),
             caption=f"""
-<b>🏷 Nama:</b> [{title[:25]}]({url})
-<b>⏱️ Durasi:</b> {duration}
-<b>💡</b> [More Information](https://t.me/{BOT_USERNAME}?start=info_{id})
-<b>🎧 Atas permintaan:</b> {checking}
+<b>🏷️ Name : [{title[:25]}]({link})</b>
+<b>╚═ Time :</b> {duration} \n
+<b>╚═ User : </b>{checking}
 """,
         )
         os.remove(thumb)
@@ -763,7 +761,7 @@ async def popat(_,CallbackQuery):
     if i == 2:
         buttons = search_markup(ID1, duration1, user_id, query)
         await CallbackQuery.edit_message_text(
-            f"**✨ Silahkan pilih lagu yang ingin anda putar**\n\n¹ <b>{title1[:27]}</b>\n  ┗ 💡 <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID1})__</u>\n  ┗ ⚡ __Powered by {BOT_NAME}__\n\n² <b>{title2[:27]}</b>\n  ┗ 💡 <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID2})__</u>\n  ┗ ⚡ __Powered by {BOT_NAME}__\n\n³ <b>{title3[:27]}</b>\n  ┗ 💡 <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID3})__</u>\n  ┗ ⚡ __Powered by {BOT_NAME}__\n\n⁴ <b>{title4[:27]}</b>\n  ┗ 💡 <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID4})__</u>\n  ┗ ⚡ __Powered by {BOT_NAME}__\n\n⁵ <b>{title5[:27]}</b>\n  ┗ 💡 <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID5})__</u>\n  ┗ ⚡ __Powered by {BOT_NAME}__",    
+            f"**💡 Confirmation here**\n\n<b>Do you really want to play {title1[:27]} ?</b>\n╘══ <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID1})__</u>\n\n**Powered by :** <u>__[The Creator Pavan](https://t.me/TheCreatorPavan)__</u>",    
             reply_markup=InlineKeyboardMarkup(buttons),
             disable_web_page_preview=True 
         )  
