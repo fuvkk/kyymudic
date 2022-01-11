@@ -16,7 +16,7 @@ def play_markup(videoid, user_id):
             InlineKeyboardButton(text="‣‣I", callback_data=f"skipvc2"),
             InlineKeyboardButton(text="▢", callback_data=f"stopvc2"),
         ],[
-            InlineKeyboardButton(text="sᴜᴘᴘᴏʀᴛ​​", url=f"https://t.me/{GROUP}"),
+            InlineKeyboardButton(text="ᴄʟᴏsᴇ​​", callback_data=f"close"),
             InlineKeyboardButton(text="ᴍᴇɴᴜ", callback_data=f"other {videoid}|{user_id}"),
         ],
         [      
@@ -40,10 +40,10 @@ def others_markup(videoid, user_id):
         ],
         [
             InlineKeyboardButton(
-                text="⇩ ᴜɴᴅᴜʜ ᴀᴜᴅɪᴏ", callback_data=f"gets audio|{videoid}|{user_id}"
+                text="⇩ ɢᴇᴛ ᴀᴜᴅɪᴏ", callback_data=f"gets audio|{videoid}|{user_id}"
             ),
             InlineKeyboardButton(
-                text="⇩ ᴜɴᴅᴜʜ ᴠɪᴅᴇᴏ", callback_data=f"gets video|{videoid}|{user_id}"
+                text="⇩ ɢᴇᴛ ᴠɪᴅᴇᴏ", callback_data=f"gets video|{videoid}|{user_id}"
             ),
         ],
         [
@@ -91,12 +91,12 @@ def search_markup(
     buttons = [
         [
             InlineKeyboardButton(
-                text="Click Here", callback_data=f"Music2 {ID1}|{duration1}|{user_id}"
+                text="ᴄᴏɴꜰɪʀᴍ", callback_data=f"Music2 {ID1}|{duration1}|{user_id}"
             ),
         ],
         [
             InlineKeyboardButton(
-                text="ᴛᴜᴛᴜᴘ", callback_data=f"ppcl2 smex|{user_id}"
+                text="ᴄᴀɴᴄᴇʟ", callback_data=f"ppcl2 smex|{user_id}"
             ),
         ],
     ]
