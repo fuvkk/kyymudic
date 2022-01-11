@@ -240,6 +240,7 @@ Saya perlu menjadi admin dengan beberapa izin:
         await message.reply_text(
             "I don't have the required permission to perform this action."
             + "\n❌ UNDANG PENGGUNA MELALUI LINK"
+        )
         return
     if not a.can_restrict_members:
         await message.reply_text(
