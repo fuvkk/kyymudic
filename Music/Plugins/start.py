@@ -53,17 +53,17 @@ pstart_markup = InlineKeyboardMarkup(
     [
         [
             InlineKeyboardButton(
-                "➕ ᴀᴅᴅ ᴍᴇ ʏᴏᴜʀ ᴛᴏ ɢʀᴏᴜᴘ​ ➕", url=f"https://t.me/{BOT_USERNAME}?startgroup=true"),
+                "ᴍᴀɴᴀɢᴇᴍᴇɴᴛ + ᴍᴜꜱɪᴄ ʙᴏᴛ", url=f"https://t.me/CreatorPavanNetworkBot"),
         ],
         [
-            InlineKeyboardButton(text="✨ sᴜᴘᴘᴏʀᴛ​", url=f"https://t.me/{GROUP}"),
-            InlineKeyboardButton("✨ ᴜᴘᴅᴀᴛᴇs", url=f"https://t.me/{CHANNEL}"),
+            InlineKeyboardButton(text="sᴜᴘᴘᴏʀᴛ​", url=f"https://t.me/{GROUP}"),
+            InlineKeyboardButton("ᴜᴘᴅᴀᴛᴇs", url=f"https://t.me/{CHANNEL}"),
         ],
         [
-            InlineKeyboardButton("📚 ᴄᴏᴍᴍᴀɴᴅ ​📚", url="https://telegra.ph/ҡʏʏ-ᴇx-12-15"),
+            InlineKeyboardButton("📚 ᴄᴏᴍᴍᴀɴᴅs ​📚", url="https://telegra.ph/Creator-Pavan-Music-01-11"),
         ],
         [
-            InlineKeyboardButton("🌐 sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ 🌐", url="https://github.com/muhammadrizky16/KyyMusic"),
+            InlineKeyboardButton("➕ ᴀᴅᴅ ᴍᴇ ʏᴏᴜʀ ᴛᴏ ɢʀᴏᴜᴘ​ ➕", url=f"https://t.me/{BOT_USERNAME}?startgroup=true"),
         ],
     ]
 )
@@ -103,7 +103,7 @@ async def welcome(_, message: Message):
 @Client.on_message(
     filters.group
     & filters.command(
-        ["start", "help", f"start@{BOT_USERNAME}", f"help@{BOT_USERNAME}"]
+        ["start", "help", "pavan", f"start@{BOT_USERNAME}", f"help@{BOT_USERNAME}"]
     )
 )
 async def start(_, message: Message):
@@ -111,11 +111,13 @@ async def start(_, message: Message):
     out = start_pannel()
     await message.reply_text(
         f"""
-**Bot working properly..!**
+**Bot working..**
 
-Thanks for adding me in ur supergroup {message.chat.title}.
+🤝 Thanks for adding me in ur supergroup {message.chat.title}..
 
-Don't Forget to join **Creator Pavan Network.**
+For any type of quarries please join support chat and for updates don't forget to join official updates channel.
+
+**© @TheCreatorPavan**
 """,
         reply_markup=InlineKeyboardMarkup(out[1]),
         disable_web_page_preview=True
@@ -132,9 +134,9 @@ async def play(_, message: Message):
         await app.send_message(
             message.chat.id,
             text=f"""
-**🙋🏻 Welcome {rpk}..**
+**🙋🏻 ᴡᴇʟᴄᴏᴍᴇ {rpk}..**
 
-💬 **[ᴘᴀᴠᴀɴ ᴛᴜɴᴇꜱ](https://t.me/Creator_Pavan) ᴀʟʟᴏᴡꜱ ʏᴏᴜ ᴛᴏ ᴘʟᴀʏ ᴍᴜꜱɪᴄ ᴀɴᴅ ᴠɪᴅᴇᴏ ᴏɴ ᴜʀ ɢʀᴏᴜᴘꜱ ᴛʜʀᴏᴜɢʜ ᴛʜᴇ ɴᴇᴡ ᴛᴇʟᴇɢʀᴀᴍ'ꜱ ᴠɪᴅᴇᴏ ᴄʜᴀᴛꜱ ꜰᴇᴀᴛᴜʀᴇ..!
+💬 **[ᴘᴀᴠᴀɴ ᴛᴜɴᴇꜱ](https://t.me/Creator_Pavan) ᴀʟʟᴏᴡꜱ ʏᴏᴜ ᴛᴏ ᴘʟᴀʏ ᴍᴜꜱɪᴄ ᴀɴᴅ ᴠɪᴅᴇᴏ ᴏɴ ᴜʀ ɢʀᴏᴜᴘꜱ ᴛʜʀᴏᴜɢʜ ᴛʜᴇ ɴᴇᴡ ᴛᴇʟᴇɢʀᴀᴍ'ꜱ ᴠɪᴅᴇᴏ ᴄʜᴀᴛꜱ ꜰᴇᴀᴛᴜʀᴇ..! ɪᴛ ʜᴀᴠᴇ ᴛᴏ ᴍᴀɴʏ ɴᴇᴡ ᴜᴘᴅᴀᴛᴇᴅ ꜰᴇᴀᴛᴜʀᴇꜱ ʟɪᴋᴇ ᴠɪᴅᴇᴏ ᴘʟᴀʏ, ꜱᴛʀᴇᴀᴍ, ᴍᴘ3 ꜱᴏɴɢ ᴅᴏᴡɴʟᴏᴀᴅ, ᴅᴏᴡɴʟᴏᴀᴅ ꜱᴏɴɢ ɪɴ ᴠɪᴅᴇᴏ ꜰᴏʀᴍᴀᴛ ᴇᴛᴄ..
 
 💁🏻‍♂️ ᴜꜱᴇ ᴛʜᴇ ꜰᴏʟʟᴏᴡɪɴɢ ʙᴜᴛᴛᴏɴꜱ ᴛᴏ ᴋɴᴏᴡ ᴍᴏʀᴇ ᴀʙᴏᴜᴛ ᴘᴀᴠᴀɴ ᴛᴜɴᴇꜱ ᴏᴘ ᴍᴜꜱɪᴄ ʙᴏᴛ ꜱʏꜱᴛᴇᴍ.**
 """,
