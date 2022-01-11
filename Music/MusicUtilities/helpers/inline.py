@@ -11,8 +11,13 @@ from Music.config import GROUP, CHANNEL
 def play_markup(videoid, user_id):
     buttons = [
         [
+            InlineKeyboardButton(text="▷", callback_data=f"resumevc2"),
+            InlineKeyboardButton(text="II", callback_data=f"pausevc2"),
+            InlineKeyboardButton(text="‣‣I", callback_data=f"skipvc2"),
+            InlineKeyboardButton(text="▢", callback_data=f"stopvc2"),
+        ],[
             InlineKeyboardButton(text="sᴜᴘᴘᴏʀᴛ​​", url=f"https://t.me/{GROUP}"),
-            InlineKeyboardButton(text="✨ ᴍᴇɴᴜ", callback_data=f"other {videoid}|{user_id}"),
+            InlineKeyboardButton(text="ᴍᴇɴᴜ", callback_data=f"other {videoid}|{user_id}"),
         ],
         [      
                InlineKeyboardButton(text="ᴄʟᴏsᴇ", callback_data=f"close"),
