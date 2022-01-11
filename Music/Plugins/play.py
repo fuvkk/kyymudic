@@ -663,7 +663,7 @@ async def startyuplay(_, CallbackQuery):
                 taken = "00:00"
             size = d["_total_bytes_str"]
             mystic.edit(
-                f"**Creator Pavan Downloader**\n\**{title[:50]}.....**\n\n**FileSize:** {size}\n■■■■■■■■■■ `100%`\n**Time Taken:** {taken} sec\n\n**Converting File**[__FFmpeg processing__]"
+                f"**Creator Pavan Downloader**\n\n**{title[:50]}.....**\n\n**FileSize:** {size}\n■■■■■■■■■■ `100%`\n**Time Taken:** {taken} sec\n\n**Converting File**[__FFmpeg processing__]"
             )
             print(f"[{videoid}] Downloaded| Elapsed: {taken} seconds")
 
@@ -699,7 +699,7 @@ async def startyuplay(_, CallbackQuery):
             caption=f"""
 <b>💡 Track Added in Queue</b>
 
-<b>🏷️ Name : [{title[:25]}]</b>
+<b>🏷️ Name : {title[:20]}</b>
 <b>⏱️ Time :</b> {duration}
 <b>💁🏻 User : </b>{checking}
 
@@ -727,7 +727,7 @@ async def startyuplay(_, CallbackQuery):
             photo=thumb,
             reply_markup=InlineKeyboardMarkup(buttons),
             caption=f"""
-<b>🏷️ Name : [{title[:25]}]</b>
+<b>🏷️ Name : {title[:20]}</b>
 <b>⏱️ Time :</b> {duration}
 <b>💁🏻 User : </b>{checking}
 """,
