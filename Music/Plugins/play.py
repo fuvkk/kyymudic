@@ -471,7 +471,7 @@ Saya perlu menjadi admin dengan beberapa izin:
         thumb ="cache/IMG_20211105_143948_192.jpg"
         buttons = search_markup(ID1, duration1, user_id, query)
         await mystic.edit( 
-            f"**💡 Confirmation here**\n\n<b>Do you really want to play your requested song {title1[:27]} ?</b>\n<u>__[More Information about song..](https://t.me/{BOT_USERNAME}?start=info_{ID1})__</u>\n\n**Powered by : <u>[The Creator Pavan](https://t.me/TheCreatorPavan)</u>**",    
+            f"**💡 Confirmation here**\n\n<b>Do you really want to play your requested song {title1[:50]} ?</b>\n\n**Powered by : <u>[The Creator Pavan](https://t.me/TheCreatorPavan)</u>**",    
             reply_markup=InlineKeyboardMarkup(buttons),
             disable_web_page_preview=True
         )  
@@ -761,7 +761,7 @@ async def popat(_,CallbackQuery):
     if i == 2:
         buttons = search_markup(ID1, duration1, user_id, query)
         await CallbackQuery.edit_message_text(
-            f"**💡 Confirmation here**\n\n<b>Do you really want to play your requested song {title1[:27]} ?</b>\n<u>__[More Information about song..](https://t.me/{BOT_USERNAME}?start=info_{ID1})__</u>\n\n**Powered by : <u>[The Creator Pavan](https://t.me/TheCreatorPavan)</u>**",    
+            f"**💡 Confirmation here**\n\n<b>Do you really want to play your requested song {title1[:50]} ?</b>\n\n**Powered by : <u>[The Creator Pavan](https://t.me/TheCreatorPavan)</u>**",    
             reply_markup=InlineKeyboardMarkup(buttons),
             disable_web_page_preview=True 
         )  
