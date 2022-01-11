@@ -470,7 +470,7 @@ Example :** `/play grind`
         thumb ="cache/IMG_20211105_143948_192.jpg"
         buttons = search_markup(ID1, duration1, user_id, query)
         await mystic.edit( 
-            f"**💡 IS THIS IS UR SONG ?**\n\n<b>{title1[:50]}</b>\n\n**Powered by : <u>[The Creator Pavan](https://t.me/TheCreatorPavan)</u>**",    
+            f"**💡 IS THIS IS UR SONG ?**\n\n<b>{title1[:80]}</b>\n\n**Powered by : <u>[The Creator Pavan](https://t.me/TheCreatorPavan)</u>**",    
             reply_markup=InlineKeyboardMarkup(buttons),
             disable_web_page_preview=True
         )  
@@ -760,7 +760,7 @@ async def popat(_,CallbackQuery):
     if i == 2:
         buttons = search_markup(ID1, duration1, user_id, query)
         await CallbackQuery.edit_message_text(
-            f"**💡 IS THIS IS UR SONG ?**\n\n<b>{title1[:50]}</b>\n\n**Powered by : <u>[The Creator Pavan](https://t.me/TheCreatorPavan)</u>**",    
+            f"**💡 CONFIRMATION.**\n**IS THIS IS UR SONG ?**\n\n<b>{title1[:80]}</b>\n\n**Powered by : <u>[The Creator Pavan](https://t.me/TheCreatorPavan)</u>**",    
             reply_markup=InlineKeyboardMarkup(buttons),
             disable_web_page_preview=True 
         )  
