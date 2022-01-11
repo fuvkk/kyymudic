@@ -97,14 +97,14 @@ async def closesmex(_, CallbackQuery):
     except Exception as e:
         await CallbackQuery.message.edit(
             f"""
-Terjadi kesalahan
-Kemungkinan alasannya bisa** :{e}
+There is an error
+Possible reasons could be** :{e}
 """
         )
         return
     if CallbackQuery.from_user.id != int(user_id):
         await CallbackQuery.answer(
-            "Anda tidak diizinkan untuk menutup memu ini", show_alert=True
+            "You are not allowed to close this memu.", show_alert=True
         )
         return
     await CallbackQuery.message.delete()
@@ -118,7 +118,7 @@ async def pausevc(_, CallbackQuery):
     )
     if not a.can_manage_voice_chats:
         return await CallbackQuery.answer(
-            "Anda tidak memiliki izin yang diperlukan untuk melakukan tindakan ini.\n• ❌ MENGELOLA OBROLAN SUARA",
+            "You do not have the necessary permissions to perform this action.\n• ❌ MANAGING VOICE CHATS",
             show_alert=True,
         )
     CallbackQuery.from_user.first_name
@@ -132,14 +132,14 @@ async def pausevc(_, CallbackQuery):
             user_name = CallbackQuery.from_user.first_name
             rpk = "[" + user_name + "](tg://user?id=" + str(user_id) + ")"
             await CallbackQuery.message.reply(
-                f"🎧 Lagu Dijeda oleh {rpk}!", reply_markup=play_keyboard
+                f"🎧 Song Paused by {rpk}!", reply_markup=play_keyboard
             )
             await CallbackQuery.message.delete()
         else:
-            await CallbackQuery.answer(f"Tidak ada yang diputar!", show_alert=True)
+            await CallbackQuery.answer(f"Nothing is playing..!", show_alert=True)
             return
     else:
-        await CallbackQuery.answer(f"Tidak ada yang diputar di Musik!", show_alert=True)
+        await CallbackQuery.answer(f"Nothing is playing in Music.!", show_alert=True)
 
 
 @Client.on_callback_query(filters.regex("resumevc"))
@@ -150,9 +150,9 @@ async def resumevc(_, CallbackQuery):
     if not a.can_manage_voice_chats:
         return await CallbackQuery.answer(
             """
-Anda tidak memiliki izin yang diperlukan untuk melakukan tindakan ini.
+You do not have the necessary permissions to perform this action.
 
-• ❌ MENGELOLA OBROLAN SUARA
+• MANAGE VOICE CHAT
 """,
             show_alert=True,
         )
@@ -161,23 +161,23 @@ Anda tidak memiliki izin yang diperlukan untuk melakukan tindakan ini.
     if await is_active_chat(chat_id):
         if await is_music_playing(chat_id):
             await CallbackQuery.answer(
-                "Saya tidak berpikir jika ada sesuatu yang dijeda di obrolan suara",
+                "I don't think if anything is paused in the voice chat",
                 show_alert=True,
             )
             return
         else:
             await music_on(chat_id)
             await music.pytgcalls.resume_stream(chat_id)
-            await CallbackQuery.answer("Dilanjutkan", show_alert=True)
+            await CallbackQuery.answer("Next..", show_alert=True)
             user_id = CallbackQuery.from_user.id
             user_name = CallbackQuery.from_user.first_name
             rpk = "[" + user_name + "](tg://user?id=" + str(user_id) + ")"
             await CallbackQuery.message.reply(
-                f"🎧 Lagu Dilanjutkan oleh {rpk}!", reply_markup=play_keyboard
+                f"🎧 Song Continued by {rpk}!", reply_markup=play_keyboard
             )
             await CallbackQuery.message.delete()
     else:
-        await CallbackQuery.answer(f"Tidak ada yang diputar!", show_alert=True)
+        await CallbackQuery.answer(f"Nothing is playing.!", show_alert=True)
 
 
 @Client.on_callback_query(filters.regex("skipvc"))
@@ -188,9 +188,9 @@ async def skipvc(_, CallbackQuery):
     if not a.can_manage_voice_chats:
         return await CallbackQuery.answer(
             """
-Anda tidak memiliki izin yang diperlukan untuk melakukan tindakan ini
+You do not have the necessary permissions to perform this action
 
-• ❌ MENGELOLA OBROLAN SUARA
+• MANAGE VOICE CHAT
 """,
             show_alert=True,
         )
@@ -208,17 +208,17 @@ Anda tidak memiliki izin yang diperlukan untuk melakukan tindakan ini
             await CallbackQuery.answer()
             await CallbackQuery.message.reply(
                 f"""
-**Tombol Lewati Digunakan Oleh** {rpk}
+**Skip Button Used By** {rpk}
 
-Tidak ada lagi lagu di Antrian
+No more songs in Queue
 
-Meninggalkan Obrolan Suara
+Leaving Voice Chat
 """
             )
             await music.pytgcalls.leave_group_call(chat_id)
             return
         else:
-            await CallbackQuery.answer("Obrolan Suara Dilewati", show_alert=True)
+            await CallbackQuery.answer("Voice Chat Skip.!", show_alert=True)
             afk = get(chat_id)["file"]
             f1 = afk[0]
             f2 = afk[1]
@@ -227,9 +227,9 @@ Meninggalkan Obrolan Suara
             if str(finxx) != "raw":
                 mystic = await CallbackQuery.message.reply(
                     """
-Musik sedang diputar Daftar Putar....
+Music is playing Playlist....
 
-Mengunduh Musik Berikutnya Dari Daftar Putar....
+Download Next Music From Playlist....
 """
                 )
                 url = f"https://www.youtube.com/watch?v={afk}"
@@ -239,9 +239,9 @@ Mengunduh Musik Berikutnya Dari Daftar Putar....
                 except Exception as e:
                     return await mystic.edit(
                         f"""
-Gagal mengunduh video ini.
+Failed to download this video.
 
-**Alasan**:{e}
+**Reason**:{e}
 """
                     )
                 title = x["title"]
@@ -406,13 +406,13 @@ async def stopvc(_, CallbackQuery):
         except Exception:
             pass
         await remove_active_chat(chat_id)
-        await CallbackQuery.answer("Dihentikan", show_alert=True)
+        await CallbackQuery.answer("discontinued", show_alert=True)
         user_id = CallbackQuery.from_user.id
         user_name = CallbackQuery.from_user.first_name
         rpk = "[" + user_name + "](tg://user?id=" + str(user_id) + ")"
-        await CallbackQuery.message.reply(f"🎧 Lagu Dihentikan oleh {rpk}!")
+        await CallbackQuery.message.reply(f"🎧 Song Stopped by {rpk}!")
     else:
-        await CallbackQuery.answer(f"Tidak ada yang diputar!", show_alert=True)
+        await CallbackQuery.answer(f"Nothing is playing.!", show_alert=True)
 
         
 @Client.on_callback_query(filters.regex("play_playlist"))
