@@ -471,7 +471,7 @@ Saya perlu menjadi admin dengan beberapa izin:
         thumb ="cache/IMG_20211105_143948_192.jpg"
         buttons = search_markup(ID1, duration1, user_id, query)
         await mystic.edit( 
-            f"**💡 Confirmation here**\n\n<b>Do you really want to play {title1[:27]} ?</b>\n╘══ <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID1})__</u>\n\n**Powered by :** <u>__[The Creator Pavan](https://t.me/TheCreatorPavan)__</u>",    
+            f"**💡 Confirmation here**\n\n<b>Do you really want to play your requested song {title1[:27]} ?</b>\n╘➲ <u>[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID1})</u>\n\n**Powered by : <u>__[The Creator Pavan](https://t.me/TheCreatorPavan)__</u>**",    
             reply_markup=InlineKeyboardMarkup(buttons),
             disable_web_page_preview=True
         )  
@@ -509,8 +509,8 @@ Saya perlu menjadi admin dengan beberapa izin:
 <b>💡 Track Added in Queue</b>
 
 <b>🏷️ Name : [{title[:25]}]({link})</b>
-<b>╚═ Time :</b> {duration} \n
-<b>╚═ User : </b>{checking}
+<b>⏱️ Time :</b> {duration} \n
+<b>💁🏻 User : </b>{checking}
 
 <b>#️⃣ Positioned at</b> {position}
 """,
@@ -548,8 +548,8 @@ Saya perlu menjadi admin dengan beberapa izin:
             reply_markup=InlineKeyboardMarkup(buttons),
             caption=f"""
 <b>🏷️ Name : [{title[:25]}]({link})</b>
-<b>╚═ Time :</b> {duration} \n
-<b>╚═ User : </b>{checking}
+<b>⏱️ Time :</b> {duration} \n
+<b>💁🏻 User : </b>{checking}
 """,
         )
         return await mystic.delete()
@@ -699,9 +699,9 @@ async def startyuplay(_, CallbackQuery):
             caption=f"""
 <b>💡 Track Added in Queue</b>
 
-<b>🏷️ Name : [{title[:25]}]({link})</b>
-<b>╚═ Time :</b> {duration} \n
-<b>╚═ User : </b>{checking}
+<b>🏷️ Name : [{title[:25]}]</b>
+<b>⏱️ Time :</b> {duration} \n
+<b>💁🏻 User : </b>{checking}
 
 <b>#️⃣ Positioned at</b> {position}
 """,
@@ -728,8 +728,8 @@ async def startyuplay(_, CallbackQuery):
             reply_markup=InlineKeyboardMarkup(buttons),
             caption=f"""
 <b>🏷️ Name : [{title[:25]}]</b>
-<b>╚═ Time :</b> {duration} \n
-<b>╚═ User : </b>{checking}
+<b>⏱️ Time :</b> {duration} \n
+<b>💁🏻 User : </b>{checking}
 """,
         )
         os.remove(thumb)
@@ -761,7 +761,7 @@ async def popat(_,CallbackQuery):
     if i == 2:
         buttons = search_markup(ID1, duration1, user_id, query)
         await CallbackQuery.edit_message_text(
-            f"**💡 Confirmation here**\n\n<b>Do you really want to play {title1[:27]} ?</b>\n╘══ <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID1})__</u>\n\n**Powered by :** <u>__[The Creator Pavan](https://t.me/TheCreatorPavan)__</u>",    
+            f"**💡 Confirmation here**\n\n<b>Do you really want to play your requested song {title1[:27]} ?</b>\n╘➲ <u>[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID1})</u>\n\n**Powered by : <u>__[The Creator Pavan](https://t.me/TheCreatorPavan)__</u>**",    
             reply_markup=InlineKeyboardMarkup(buttons),
             disable_web_page_preview=True 
         )  
