@@ -103,7 +103,6 @@ from Music.MusicUtilities.helpers.chattitle import CHAT_TITLE
 from Music.MusicUtilities.helpers.ytdl import ytdl_opts 
 from Music.MusicUtilities.helpers.inline import (
     play_keyboard,
-    search_markup2,
     search_markup,
 )
 from pyrogram import filters
