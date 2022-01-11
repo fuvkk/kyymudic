@@ -159,22 +159,22 @@ async def music_onoff(_, message: Message):
     if status in ("ON", "on", "On"):
         lel = await message.reply("`processing...`")
         if not message.chat.id in DISABLED_GROUPS:
-            await lel.edit("» **Music Aktif.**")
+            await lel.edit("» **Music Active.**")
             return
         DISABLED_GROUPS.remove(message.chat.id)
         await lel.edit(
-            f"**✅ Music Telah Di Diaktifkan Di {message.chat.title}**"
+            f"**✅ Music Has Been Enabled In {message.chat.title}**"
         )
 
     elif status in ("OFF", "off", "Off"):
         lel = await message.reply("`processing...`")
 
         if message.chat.id in DISABLED_GROUPS:
-            await lel.edit("» **Music Di Nonaktifkan.**")
+            await lel.edit("» **Music Disabled.**")
             return
         DISABLED_GROUPS.append(message.chat.id)
         await lel.edit(
-            f"**✅ Music Telah Di Nonaktifkan Di {message.chat.title}**"
+            f"**✅ Music Has Been Disabled In {message.chat.title}**"
         )
     else:
         await message.reply_text(
@@ -226,26 +226,25 @@ Saya perlu menjadi admin dengan beberapa izin:
         return
     if not a.can_manage_voice_chats:
         await message.reply_text(
-            "Saya tidak memiliki izin yang diperlukan untuk melakukan tindakan ini."
-            + "\n❌ MENGELOLA OBROLAN SUARA"
+            "I do not have the necessary permissions to perform this action."
+             + "\n❌ MANAGE VOICE CHATS"
         )
         return
     if not a.can_delete_messages:
         await message.reply_text(
-            "Saya tidak memiliki izin yang diperlukan untuk melakukan tindakan ini."
-            + "\n❌ HAPUS PESAN"
+            "I do not have the necessary permissions to perform this action."
+             + "\n❌ DELETE MESSAGE"
         )
         return
     if not a.can_invite_users:
         await message.reply_text(
             "I don't have the required permission to perform this action."
             + "\n❌ UNDANG PENGGUNA MELALUI LINK"
-        )
         return
     if not a.can_restrict_members:
         await message.reply_text(
-            "Saya tidak memiliki izin yang diperlukan untuk melakukan tindakan ini."
-            + "\n❌ BAN PENGGUNA"
+            "I do not have the necessary permissions to perform this action."
+             + "\n❌ USER BAN"
         )
         return
     try: 
@@ -298,19 +297,19 @@ Saya perlu menjadi admin dengan beberapa izin:
         what = "Audio Searched"
         await LOG_CHAT(message, what)
         mystic = await message.reply_text(
-            f"**🔄 Memproses Audio Yang Diberikan Oleh {username}**"
+            f"**🔄 Processing Audio Provided By {username}**"
         )
         if audio.file_size > 157286400:
-            await mystic.edit_text("Ukuran File Audio Harus Kurang dari 150 mb")
+            await mystic.edit_text("Audio File Size Must Be Less Than 150 mb.")
             return
         duration = round(audio.duration / 60)
         if duration > DURATION_LIMIT:
             return await mystic.edit_text(
                 f"""
-**Kesalahan Durasi**
+**Duration Error**
 
-**Durasi yang Diizinkan: **{DURATION_LIMIT}
-**Durasi yang Diterima:** {duration}
+**Allowed Duration :** {DURATION_LIMIT}
+**Accepted Duration :** {duration}
 """
             )
         file_name = (
@@ -328,8 +327,8 @@ Saya perlu menjadi admin dengan beberapa izin:
             if (not path.isfile(file_name))
             else file_name,
         )
-        title = "Audio Yang Dipilih Dari Telegram"
-        link = "https://t.me/NastyProject"
+        title = "Selected Audio From Telegram"
+        link = "https://t.me/TheCreatorPavan"
         thumb = "cache/Audio.png"
         videoid = "smex1"
     elif url:
@@ -350,7 +349,7 @@ Saya perlu menjadi admin dengan beberapa izin:
                 videoid = result["id"]
         except Exception as e:
             return await mystic.edit_text(
-                f"Lagu Tidak Ditemukan.\n**Kemungkinan Alasan:** {e}"
+                f"Song Not Found.\n**Possible Reason:** {e}"
             )
         smex = int(time_to_seconds(duration))
         if smex > DURATION_LIMIT:
@@ -447,10 +446,9 @@ Saya perlu menjadi admin dengan beberapa izin:
             message.from_user.first_name
             hmo = await message.reply_text(
                 """
-<b>❌ Lagu tidak ditemukan atau anda tidak menulis judul lagu dengan benar
+**Song not found or you did not write the song title correctly.
 
-✅ Contoh Menggunakan Bot
-`/play halu`
+Example :** `/play grind`
 """,
             )
             return
@@ -471,7 +469,7 @@ Saya perlu menjadi admin dengan beberapa izin:
         thumb ="cache/IMG_20211105_143948_192.jpg"
         buttons = search_markup(ID1, duration1, user_id, query)
         await mystic.edit( 
-            f"**💡 Confirmation here**\n\n<b>Do you really want to play your requested song {title1[:50]} ?</b>\n\n**Powered by : <u>[The Creator Pavan](https://t.me/TheCreatorPavan)</u>**",    
+            f"**💡 IS THIS IS UR SONG ?**\n\n<b>{title1[:50]}</b>\n\n**Powered by : <u>[The Creator Pavan](https://t.me/TheCreatorPavan)</u>**",    
             reply_markup=InlineKeyboardMarkup(buttons),
             disable_web_page_preview=True
         )  
@@ -761,7 +759,7 @@ async def popat(_,CallbackQuery):
     if i == 2:
         buttons = search_markup(ID1, duration1, user_id, query)
         await CallbackQuery.edit_message_text(
-            f"**💡 Confirmation here**\n\n<b>Do you really want to play your requested song {title1[:50]} ?</b>\n\n**Powered by : <u>[The Creator Pavan](https://t.me/TheCreatorPavan)</u>**",    
+            f"**💡 IS THIS IS UR SONG ?**\n\n<b>{title1[:50]}</b>\n\n**Powered by : <u>[The Creator Pavan](https://t.me/TheCreatorPavan)</u>**",    
             reply_markup=InlineKeyboardMarkup(buttons),
             disable_web_page_preview=True 
         )  
