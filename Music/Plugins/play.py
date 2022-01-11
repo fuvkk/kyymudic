@@ -727,7 +727,7 @@ async def startyuplay(_, CallbackQuery):
             photo=thumb,
             reply_markup=InlineKeyboardMarkup(buttons),
             caption=f"""
-<b>🏷️ Name : [{title[:25]}]({link})</b>
+<b>🏷️ Name : [{title[:25]}]</b>
 <b>╚═ Time :</b> {duration} \n
 <b>╚═ User : </b>{checking}
 """,
