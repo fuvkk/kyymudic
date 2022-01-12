@@ -269,13 +269,13 @@ async def vplay(c: Client, message: Message):
                         await message.reply_photo(
                             photo="cache/IMG_20211230_211039_090.jpg",
                             caption=f"""
-💡 **Trek ditambahkan ke antrian**
+💡 **Track Added in Queue**
 
-🏷 **Nama:** [{songname[:999]}]({url})
-⏱️ **Durasi:** {duration}
-🎧 **Atas permintaan:** {requester}
+🏷 **Name :** [{songname[:999]}]({url})
+⏱️ **Duration :** {duration}
+🎧 **Requested by :** {requester}
 
-#️⃣ **Posisi antrian** {pos}
+#️⃣ **Positioned at ** {pos} 
 """,
                             reply_markup=keyboard,
                         )
@@ -298,13 +298,13 @@ async def vplay(c: Client, message: Message):
                             await message.reply_photo(
                                 photo="cache/IMG_20211230_211039_090.jpg",
                                 caption=f"""
-▷ **Memutar video dimulai**
+▷ **Started video stream**
 
-🏷 **Nama:** [{songname[:999]}]({url})
-⏱️ **Durasi:** {duration}
-🎧 **Atas permintaan:** {requester}
+🏷 **Name :** [{songname[:999]}]({url})
+⏱️ **Duration :** {duration}
+🎧 **Request of :** {requester}
 
-💬 **Diputar di:** {message.chat.title}
+💬 **Playing on :** {message.chat.title}
 """,
                                 reply_markup=keyboard,
                             )
