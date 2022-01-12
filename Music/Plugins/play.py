@@ -699,10 +699,9 @@ async def startyuplay(_, CallbackQuery):
 <b>💡 Track Added in Queue</b>
 
 <b>🏷️ Name : {title[:20]}</b>
-<b>⏱️ Time :</b> {duration}
-<b>💁🏻 User : </b>{checking}
-
-<b>#️⃣ Positioned at</b> {position}
+<b>╠Duration : </b> {duration}
+<b>╠Requested : </b> {checking}
+<b>╚Positione : </b> {position}
 """,
             reply_markup=InlineKeyboardMarkup(buttons),
         )
@@ -727,8 +726,8 @@ async def startyuplay(_, CallbackQuery):
             reply_markup=InlineKeyboardMarkup(buttons),
             caption=f"""
 <b>🏷️ Name : {title[:20]}</b>
-<b>⏱️ Time :</b> {duration}
-<b>💁🏻 User : </b>{checking}
+<b>╠Duration : </b> {duration}
+<b>╚Requested : </b> {checking}
 """,
         )
         os.remove(thumb)
