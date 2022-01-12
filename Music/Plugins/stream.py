@@ -197,12 +197,12 @@ async def vplay(c: Client, message: Message):
                 await message.reply_photo(
                     photo="cache/IMG_20211230_211039_090.jpg",
                     caption=f"""
-💡 **Trek ditambahkan ke antrian**
+💡 **Track Added in Queue**
 
-🏷 **Nama:** [{songname[:999]}]({link})
-🎧 **Atas permintaan:** {requester}
+🏷 **Name :** [{songname[:999]}]({link})
+🎧 **Requested by :** {requester}
 
-#️⃣ **Posisi antrian** {pos}
+#️⃣ **Positioned at** {pos}
 """,
                     reply_markup=keyboard,
                 )
@@ -228,12 +228,12 @@ async def vplay(c: Client, message: Message):
                 await message.reply_photo(
                     photo="cache/IMG_20211230_211039_090.jpg",
                     caption=f"""
-▶️ **Streaming video dimulai**
+▶️ **Started video stream**
 
-🏷 **Nama:** [{songname[:999]}]({link})
-🎧 **Atas permintaan:** {requester}
+🏷 **Name :** [{songname[:999]}]({link})
+🎧 **Requested by :** {requester}
 
-💬 **Diputar di:** {message.chat.title}
+💬 **Playing on :** {message.chat.title}
 """,
                     reply_markup=keyboard,
                 )
@@ -246,7 +246,7 @@ async def vplay(c: Client, message: Message):
         else:
             what = "Query Given"
             await LOG_CHAT(message, what)
-            loser = await message.reply("🔎 **Pencarian**")
+            loser = await message.reply("🔎 **searching**")
             query = message.text.split(None, 1)[1]
             search = ytsearch(query)
             Q = 480
