@@ -696,15 +696,13 @@ async def startyuplay(_, CallbackQuery):
         m = await CallbackQuery.message.reply_photo(
             photo=thumb,
             caption=f"""
-💡**Track Added in Queue**
-┞◈<b>Song Name</b>
-┞◈<b>{title[:20]}</b>
-┞◈<b>Duration</b>
-┞◈<b>{duration} min</b> 
-┞◈<b>Requested User</b>
-┟◈<b>{checking}</b>
-┟◈<b>Positioned at :</b> 
-╰◈<b>{position} number</b>
+<b>💡 Track Added in Queue</b>
+
+<b>🏷️ Name : {title[:20]}</b>
+<b>⏱️ Time : {duration} min</b> 
+<b>💁🏻 User : {checking}</b>
+
+<b>#️⃣ Positioned at</b> {position}
 """,
             reply_markup=InlineKeyboardMarkup(buttons),
         )
@@ -728,14 +726,9 @@ async def startyuplay(_, CallbackQuery):
             photo=thumb,
             reply_markup=InlineKeyboardMarkup(buttons),
             caption=f"""
-
-💡**Currently Playing**
-┞◈ <b>Song Name</b>
-┞◈ <b>{title[:20]}</b>
-┞◈ <b>Duration</b>
-┞◈ <b>{duration} min</b> 
-┞◈ <b>Requested User</b>
-╰◈ <b>{checking}</b>
+<b>🏷️ Name : {title[:20]}</b>
+<b>⏱️ Time : {duration} min</b>
+<b>💁🏻 User : {checking}</b>
 """,
         )
         os.remove(thumb)
