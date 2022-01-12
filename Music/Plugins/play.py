@@ -470,7 +470,7 @@ Example :** `/play grind`
         thumb ="cache/IMG_20211105_143948_192.jpg"
         buttons = search_markup(ID1, duration1, user_id, query)
         await mystic.edit( 
-            f"**💡 CONFIRMATION.**\n\n**IS THIS IS UR SONG ?**\n\n<b>{title1[:90]}</b>\n\n**Powered by : <u>[The Creator Pavan](https://t.me/TheCreatorPavan)</u>**",    
+            f"**💡 IS THIS IS UR SONG ?**\n\n<b>{title1[:90]}</b>\n\n**Powered by : <u>[The Creator Pavan](https://t.me/TheCreatorPavan)</u>**",    
             reply_markup=InlineKeyboardMarkup(buttons),
             disable_web_page_preview=True
         )  
@@ -696,12 +696,16 @@ async def startyuplay(_, CallbackQuery):
         m = await CallbackQuery.message.reply_photo(
             photo=thumb,
             caption=f"""
-<b>💡 Track Added in Queue</b>
-
-<b>➲ Name : {title[:20]}</b>
-<b>➲ Duration : </b> {duration}
-<b>➲ Requested : </b> {checking}
-<b>➲ Positioned at : </b> {position} pos
+╭━━━━━━━━━━━━━━━━━━
+┞◈<b>Song Name</b>
+┞◈<b>{title[:20]}</b>
+┞◈<b>Duration</b>
+┞◈<b>{duration} min</b> 
+┞◈<b>Requested User</b>
+┟◈<b>{checking}</b>
+┟◈<b>Positioned at :</b> 
+┟◈<b>{position} number</b>
+╰━━━━━━━━━━━━━━━━━━━
 """,
             reply_markup=InlineKeyboardMarkup(buttons),
         )
@@ -725,11 +729,15 @@ async def startyuplay(_, CallbackQuery):
             photo=thumb,
             reply_markup=InlineKeyboardMarkup(buttons),
             caption=f"""
-💡 **Currently Playing**
 
-<b>➲ Name : {title[:20]}</b>
-<b>➲ Duration : </b> {duration} min
-<b>➲ Requested : </b> {checking}
+╭━━━━━━━━━━━━━━━━━━
+┞◈<b>Song Name</b>
+┞◈<b>{title[:20]}</b>
+┞◈<b>Duration</b>
+┞◈<b>{duration} min</b> 
+┞◈<b>Requested User</b>
+┟◈<b>{checking}</b>
+╰━━━━━━━━━━━━━━━━━━━
 """,
         )
         os.remove(thumb)
@@ -761,7 +769,7 @@ async def popat(_,CallbackQuery):
     if i == 2:
         buttons = search_markup(ID1, duration1, user_id, query)
         await CallbackQuery.edit_message_text(
-            f"**💡 CONFIRMATION.**\n\n**IS THIS IS UR SONG ?**\n\n<b>{title1[:90]}</b>\n\n**Powered by : <u>[The Creator Pavan](https://t.me/TheCreatorPavan)</u>**",    
+            f"**💡 IS THIS IS UR SONG ?**\n\n<b>{title1[:90]}</b>\n\n**Powered by : <u>[The Creator Pavan](https://t.me/TheCreatorPavan)</u>**",    
             reply_markup=InlineKeyboardMarkup(buttons),
             disable_web_page_preview=True 
         )  
