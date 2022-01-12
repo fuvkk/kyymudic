@@ -698,10 +698,10 @@ async def startyuplay(_, CallbackQuery):
             caption=f"""
 <b>💡 Track Added in Queue</b>
 
-<b>🏷️ Name : {title[:20]}</b>
-<b>╠Duration : </b> {duration}
-<b>╠Requested : </b> {checking}
-<b>╚Positione : </b> {position}
+<b>➲ Name : {title[:20]}</b>
+<b>➲ Duration : </b> {duration}
+<b>➲ Requested : </b> {checking}
+<b>➲ Positioned at : </b> {position} pos
 """,
             reply_markup=InlineKeyboardMarkup(buttons),
         )
@@ -725,9 +725,11 @@ async def startyuplay(_, CallbackQuery):
             photo=thumb,
             reply_markup=InlineKeyboardMarkup(buttons),
             caption=f"""
-<b>🏷️ Name : {title[:20]}</b>
-<b>╠Duration : </b> {duration}
-<b>╚Requested : </b> {checking}
+💡 **Currently Playing**
+
+<b>➲ Name : {title[:20]}</b>
+<b>➲ Duration : </b> {duration} min
+<b>➲ Requested : </b> {checking}
 """,
         )
         os.remove(thumb)
