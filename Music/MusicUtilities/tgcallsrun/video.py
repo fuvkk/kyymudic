@@ -106,7 +106,7 @@ async def stream_end_handler(_, u: Update):
         else:
             await app.send_message(
                 chat_id,
-                f"**▷ Sekarang memutar video\n\n🏷 Nama: [{op[0]}]({op[1]})**",
+                f"**▷ Started video stream\n\n🏷 Name : [{op[0]}]({op[1]})**",
                 disable_web_page_preview=True,
                 reply_markup=keyboard,
             )
