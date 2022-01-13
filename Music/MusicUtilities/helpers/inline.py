@@ -12,7 +12,7 @@ def play_markup(videoid, user_id):
     buttons = [
         [
             InlineKeyboardButton(text="• ᴍᴇɴᴜ", callback_data=f"other {videoid}|{user_id}"),
-            InlineKeyboardButton(text="ᴅᴏᴡɴʟᴏᴀᴅ •", callback_data=f"gets video|{videoid}|{user_id}"),
+            InlineKeyboardButton(text="ᴅᴏᴡɴʟᴏᴀᴅ •", callback_data=f"gets audio|{videoid}|{user_id}"
         ],
         [      
                
