@@ -95,7 +95,7 @@ def search_markup(
                 text="♬ ᴄʟɪᴄᴋ ʜᴇʀᴇ ᴛᴏ ᴘʟᴀʏ ♬", callback_data=f"Music2 {ID1}|{duration1}|{user_id}"
             ),
         ],
-        
+        ]
     return buttons
 
 
