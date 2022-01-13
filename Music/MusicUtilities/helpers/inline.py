@@ -11,17 +11,12 @@ from Music.config import GROUP, CHANNEL
 def play_markup(videoid, user_id):
     buttons = [
         [
-            InlineKeyboardButton(text="▢", callback_data=f"stopvc2"),
-            InlineKeyboardButton(text="▷", callback_data=f"resumevc2"),
-            InlineKeyboardButton(text="II", callback_data=f"pausevc2"),
-            InlineKeyboardButton(text="‣‣", callback_data=f"skipvc2"),
-        ],[
-            InlineKeyboardButton(text="⇩ ɢᴇᴛ ᴀᴜᴅɪᴏ​​", callback_data=f"gets audio|{videoid}|{user_id}"),
-            InlineKeyboardButton(text="⇩ ɢᴇᴛ ᴠɪᴅᴇᴏ", callback_data=f"gets video|{videoid}|{user_id}"),
+            InlineKeyboardButton(text="• ᴍᴇɴᴜ", callback_data=f"other {videoid}|{user_id}"),
+            InlineKeyboardButton(text="ᴅᴏᴡɴʟᴏᴀᴅ •", callback_data=f"gets video|{videoid}|{user_id}"),
         ],
         [      
-            InlineKeyboardButton(text="≡ ᴍᴇɴᴜ", callback_data=f"other {videoid}|{user_id}"),   
-            InlineKeyboardButton(text="ᴄʟᴏꜱᴇ ↺", callback_data=f"close"),
+               
+            InlineKeyboardButton(text="ᴄʟᴏꜱᴇ", callback_data=f"close"),
         ],
     ]
     return buttons
@@ -30,14 +25,10 @@ def play_markup(videoid, user_id):
 def others_markup(videoid, user_id):
     buttons = [
         [
-            InlineKeyboardButton(text="▷", callback_data=f"resumevc2"),
-            InlineKeyboardButton(text="II", callback_data=f"pausevc2"),
-            InlineKeyboardButton(text="‣‣I", callback_data=f"skipvc2"),
-            InlineKeyboardButton(text="▢", callback_data=f"stopvc2"),
-        ],
-        [
-            InlineKeyboardButton(text="➕ ᴀᴅᴅ ᴜʀ ʟɪsᴛ​", callback_data=f'playlist {videoid}|{user_id}'),
-            InlineKeyboardButton(text="➕ ᴀᴅᴅ ɢʀᴘ ʟɪsᴛ​", callback_data=f'group_playlist {videoid}|{user_id}'),
+            InlineKeyboardButton(text="▶️", callback_data=f"resumevc2"),
+            InlineKeyboardButton(text="⏸️", callback_data=f"pausevc2"),
+            InlineKeyboardButton(text="⏭️", callback_data=f"skipvc2"),
+            InlineKeyboardButton(text="⏹️", callback_data=f"stopvc2"),
         ],
         [
             InlineKeyboardButton(
@@ -51,7 +42,6 @@ def others_markup(videoid, user_id):
             InlineKeyboardButton(
                 text="⌫", callback_data=f"goback {videoid}|{user_id}"
             ),
-            InlineKeyboardButton(text="ᴄʟᴏꜱᴇ", callback_data=f"close2"),
         ],
     ]
     return buttons
@@ -60,10 +50,10 @@ def others_markup(videoid, user_id):
 play_keyboard = InlineKeyboardMarkup(
     [
         [
-            InlineKeyboardButton("▷", callback_data="resumevc"),
-            InlineKeyboardButton("II", callback_data="pausevc"),
-            InlineKeyboardButton("‣‣I", callback_data="skipvc"),
-            InlineKeyboardButton("▢", callback_data="stopvc"),
+            InlineKeyboardButton("▶️", callback_data="resumevc"),
+            InlineKeyboardButton("⏸️", callback_data="pausevc"),
+            InlineKeyboardButton("⏭️", callback_data="skipvc"),
+            InlineKeyboardButton("⏹️", callback_data="stopvc"),
         ],
         [InlineKeyboardButton("ᴄʟᴏꜱᴇ", callback_data="close")],
     ]
@@ -73,10 +63,10 @@ play_keyboard = InlineKeyboardMarkup(
 def audio_markup(videoid, user_id):
     buttons = [
         [
-            InlineKeyboardButton(text="▷", callback_data=f"resumevc2"),
-            InlineKeyboardButton(text="II", callback_data=f"pausevc2"),
-            InlineKeyboardButton(text="‣‣I", callback_data=f"skipvc2"),
-            InlineKeyboardButton(text="▢", callback_data=f"stopvc2"),
+            InlineKeyboardButton(text="▶️", callback_data=f"resumevc2"),
+            InlineKeyboardButton(text="⏸️", callback_data=f"pausevc2"),
+            InlineKeyboardButton(text="⏭️", callback_data=f"skipvc2"),
+            InlineKeyboardButton(text="⏹️", callback_data=f"stopvc2"),
         ],
         [InlineKeyboardButton(text="ᴄʟᴏꜱᴇ", callback_data="close2")],
     ]
