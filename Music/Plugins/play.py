@@ -505,8 +505,6 @@ Example :** `/play grind`
         await message.reply_photo(
             photo=thumb,
             caption=f"""
-<b>💡 Track Added in Queue</b>
-
 <b>🏷️ Name : [{title[:25]}]({link})</b>
 <b>⏱️ Time :</b> {duration}
 <b>💁🏻 User : </b>{checking}
@@ -696,8 +694,6 @@ async def startyuplay(_, CallbackQuery):
         m = await CallbackQuery.message.reply_photo(
             photo=thumb,
             caption=f"""
-<b>💡 Track Added in Queue</b>
-
 <b>🏷️ Name : {title[:20]}</b>
 <b>⏱️ Time : {duration} min</b> 
 <b>💁🏻 User : {checking}</b>
