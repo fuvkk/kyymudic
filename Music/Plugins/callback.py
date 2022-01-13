@@ -329,11 +329,11 @@ Failed to download this video.
                     reply_markup=InlineKeyboardMarkup(buttons),
                     caption=(
                         f"""
-<b>⏭️ Melewati lagu permintaa {rpk}</b>
+<b>⏭️ Skip the request song {rpk}</b>
 
-<b>🏷 Nama: </b>[{title[:25]}]({url})
-<b>⏱️ Durasi: :</b> {duration}
-<b>🎧 Atas permintaan:</b> {semx.mention}
+<b>🏷 Name : </b>[{title[:25]}]({url})
+<b>⏱️ Duration : :</b> {duration}
+<b>🎧 Requested by :</b> {semx.mention}
 """
                     ),
                 )
@@ -374,11 +374,11 @@ Failed to download this video.
                     photo=f"downloads/{_chat_}final.png",
                     reply_markup=InlineKeyboardMarkup(buttons),
                     caption=f"""
-<b>⏭️ Melewati lagu permintaa: {rpk}</b>
+<b>⏭️ Skip the request song : {rpk}</b>
 
-<b>🏷️ Nama:</b> {title}
-<b>⌚ Durasi</b> {duration}
-<b>🎧 Atas permintaan:</b> {username}
+<b>🏷️ Name :</b> {title}
+<b>⌚ Duration :</b> {duration}
+<b>🎧 Requested by :</b> {username}
 """,
                 )
                 return
