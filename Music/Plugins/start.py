@@ -103,7 +103,7 @@ async def welcome(_, message: Message):
 @Client.on_message(
     filters.group
     & filters.command(
-        ["start", "help", "pavan", f"start@{BOT_USERNAME}", f"help@{BOT_USERNAME}"]
+        ["pavan"]
     )
 )
 async def start(_, message: Message):
@@ -125,7 +125,7 @@ For any type of quarries please join support chat and for updates don't forget t
     return
 
 
-@Client.on_message(filters.private & filters.incoming & filters.command("start"))
+@Client.on_message(filters.private & filters.incoming & filters.command("pdm"))
 async def play(_, message: Message):
     if len(message.command) == 1:
         user_id = message.from_user.id
