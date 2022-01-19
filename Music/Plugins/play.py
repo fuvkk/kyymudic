@@ -472,7 +472,7 @@ Example :** `/play grind`
         thumb ="cache/IMG_20211105_143948_192.jpg"
         buttons = search_markup(ID1, duration1, user_id, query)
         await mystic.edit( 
-            f"<b>{title1[:90]}</b>\n\n**Powered by : <u>[The Creator Pavan](https://t.me/TheCreatorPavan)</u>**",    
+            f"<b>{title1[:90]}...</b>",    
             reply_markup=InlineKeyboardMarkup(buttons),
             disable_web_page_preview=True
         )  
