@@ -217,10 +217,12 @@ Kembalikan kembali ke Akun Pengguna Dari Hak Admin.
             """
 Saya perlu menjadi admin dengan beberapa izin:
 
-- **dapat mengelola obrolan suara:** Untuk mengelola obrolan suara
-- **dapat menghapus pesan:** Untuk menghapus Sampah yang Dicari Musik
-- **dapat mengundang pengguna**: Untuk mengundang asisten untuk mengobrol
-- **dapat membatasi anggota**: Untuk Melindungi Musik dari Spam.
+I need to be an admin with some permissions:
+
+ - can manage voice chat: To manage voice chat
+ - can delete messages: To delete Music Searched Junk
+ - can invite users: To invite assistant to chat
+ - can restrict members: To Protect Music from Spam.
 """
         )
         return
